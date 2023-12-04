@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BERTA</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+    input {
+      padding: 8px;
+      margin-bottom: 10px;
+    }
+    #password-input, #submit-btn {
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <h1>AVALUACIÓ BERTUX</h1>
+  <h2>La contrasenya són 4 lletres.</h2>
+  <h3>Sabràs les lletres perquè seràn la inicial de la resposta a aquestes preguntes:</h3>
+  <ul>
+
+  </ul>
+  <li style="margin-bottom: 20px;">Quin ocell aquàtic és conegut per la seva naturalesa nadadora, generalment té el cos cobert de plomes i el seu àmbit natural són els llacs i rius?</li>
+  <li style="margin-bottom: 20px;">Quin dolç tradicional es coneix per ser elaborat especialment durant la temporada de Pasqua i sovint és decorat amb ous de xocolata i altres figures?</li>
+  <li style="margin-bottom: 20px;">Quin mamífer té ossos forts, pot ser gran o petit, i és conegut per hibernar durant l'hivern en algunes zones fredes del món?</li>
+  <li style="margin-bottom: 20px;">Quin plat de la cuina italiana està format per capes de massa farcides amb diversos ingredients com formatge, carn o vegetals i es serveix bullit o gratinat amb salsa?</li>
+  <input type="password" id="password-input" placeholder="Escriu la contrasenya">
+  <button id="submit-btn">ENVIA</button>
+
+  <script>
+    document.getElementById('submit-btn').addEventListener('click', function() {
+      var password = document.getElementById('password-input').value;
+      if (password === 'amor') { // Change 'your_password_here' to your desired password
+        // If password is correct, create a link to the PDF and simulate a click to trigger download
+        var link = document.createElement('a');
+        link.href = './assets/notes_bertux.pdf'; // Replace 'path_to_your_pdf.pdf' with your PDF file path
+        link.download = 'avaluacio_berta.pdf'; // Replace 'your_file_name.pdf' with the desired file name
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      } else {
+        alert('Incorrect password. Please try again.');
+      }
+    });
+  </script>
+</body>
+</html>
